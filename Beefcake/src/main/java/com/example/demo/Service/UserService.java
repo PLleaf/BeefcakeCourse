@@ -1,7 +1,6 @@
 package com.example.demo.Service;
 
 import com.example.demo.Dao.UserDao;
-import com.sample.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,25 +16,19 @@ public class UserService {
             int role = userDao.getRole(account, password);
             int status = userDao.getStatus(account, password);
             String Role=new String();
-            String Status=new String();
 
             switch (role)
             {
-                case 0:Role="教师";break;
-                case 1:Role="学生";break;
+                case 0:Role="teacher";break;
+                case 1:Role="student";break;
             }
 
-            switch (status)
-            {
-                case 0:Status="未激活";break;
-                case 1:Status="激活";break;
-            }
 
-            return Role+Status;
+            return Role;
         }
         catch (Exception e)
         {
-            return"账号或密码错误";
+            return"error";
         }
     }
 
