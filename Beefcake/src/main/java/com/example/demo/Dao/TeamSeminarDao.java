@@ -5,9 +5,9 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface SeminarDao {
+public interface TeamSeminarDao {
 
-    public List<TeamSeminarEntity> findAll(@Param("seminarId")long seminarId);
+    public List<TeamSeminarEntity> findAll(@Param("seminarId")Long seminarId);
 
     public TeamSeminarEntity find(@Param("teamId")long teamId, @Param("no")long no);
 
